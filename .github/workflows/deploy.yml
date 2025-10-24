@@ -37,7 +37,7 @@ jobs:
     needs: makeTagAndRelease
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: kp-2025-10-24-2
+      DOCKER_IMAGE_NAME: aibe-25-10-24-test
     steps:
       - uses: actions/checkout@v4
       - name: Docker Buildx 설치
@@ -64,7 +64,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: kp-2025-10-24-2
+      DOCKER_IMAGE_NAME: aibe-25-10-24-test
     needs: [ buildImageAndPush ]
     steps:
       - name: AWS SSM Send-Command
